@@ -3,38 +3,7 @@ console.log('***** Music Collection *****')
 
 
 // let album = title + artist + yearPublished;
-let myCollection = [
-  {
-    title: 'Heartache Medication',
-    artist: "Jon Pardi",
-    yearPublished: 2019 
-  },
-  {
-    title: 'Heartache on the Dance Floor',
-    artist: "Jon Pardi",
-    yearPublished: 2018 
-  },
-  {
-    title: 'White Iverson',
-    artist: "Post Malone",
-    yearPublished: 2016 
-  },
-  {
-    title: 'Black Betty',
-    artist: "Ram Jam",
-    yearPublished: 2004 
-  },
-  {
-    title: 'Pump It Harder',
-    artist: "Black Eyed Peas",
-    yearPublished: 2009 
-  },
-  {
-    title: 'Colder Weather',
-    artist: "Zac Brown Band",
-    yearPublished: 2010 
-  }
-]
+let myCollection = []
 
 function addToCollection(collection, title, artist, yearPublished){
   let record = {
@@ -52,14 +21,23 @@ function addToCollection(collection, title, artist, yearPublished){
 
 console.log(myCollection);
 
-// function showCollection(collection){
-//   for(i === 0; i )
-// }
+function showCollection(collection){
+  for(let i = 0; i < collection.length; i++){
+    // myCollection.record 
+    console.log(`${collection[i].title} by ${collection[i].artist}, published in ${collection[i].yearPublished}`)
+  }
+}
+console.log(showCollection(myCollection));
 
 
 
 
-
+console.log(addToCollection(myCollection, 'Heartache Medication', 'Jon Pardi', 2019))
+console.log(addToCollection(myCollection, 'Heartache on the Dance Floor', 'Jon Pardi', 2018))
+console.log(addToCollection(myCollection, 'White Iverson', 'Post Malone', 2016))
+console.log(addToCollection(myCollection, 'Black Betty', 'Ram Jam', 2004))
+console.log(addToCollection(myCollection, 'Pump It Harder', 'Black Eyed Peas', 2009))
+console.log(addToCollection(myCollection, 'Colder Weather', 'Zac Brown Band', 2010))
 
 // PLEASE DO NOT MODIFY THIS. Just leave it down here at the bottom. Think of it
 // as a lil' chunk of friendly code that you don't need to understand right now.
