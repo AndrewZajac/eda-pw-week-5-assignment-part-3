@@ -2,8 +2,7 @@ console.log('***** Music Collection *****')
 // Safe Zone -- Write code below this line
 
 
-// let album = title + artist + yearPublished;
-let myCollection = []
+let myCollection = [];
 
 function addToCollection(collection, title, artist, yearPublished){
   let record = {
@@ -21,6 +20,7 @@ function addToCollection(collection, title, artist, yearPublished){
 
 console.log(myCollection);
 
+
 function showCollection(collection){
   for(let i = 0; i < collection.length; i++){
     // myCollection.record 
@@ -29,7 +29,32 @@ function showCollection(collection){
 }
 console.log(showCollection(myCollection));
 
+function findByArtist(collection, artist){
+  let album = [];
+  for(let i = 0; i < collection.length; i++){
+    if(collection[i].artist === artist){
+      album.push(collection[i]);
+    }
+  }
+  return album;
+}
 
+console.log(findByArtist(myCollection, 'Jon Pardi'));
+
+let searchObject = {artist: 'Ray Charles', year: 1957 }
+
+function search(collection, searchCriteria){
+  let mostCriteria = [];
+  console.log(`inside search function${mostCriteria}`);
+  for(let i = 0; i < collection.length; i++){
+    if(collection[i].artist === searchCriteria.artist && collection[i].yearPublished === searchCriteria.year){
+      mostCriteria.push(collection[i]);
+    }
+  } 
+  return mostCriteria;
+}
+
+console.log(search(myCollection, 'Jon Pardi', 2019))
 
 
 console.log(addToCollection(myCollection, 'Heartache Medication', 'Jon Pardi', 2019))
