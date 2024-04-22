@@ -41,11 +41,14 @@ function findByArtist(collection, artist){
 
 console.log(findByArtist(myCollection, 'Jon Pardi'));
 
-let searchObject = {artist: 'Ray Charles', year: 1957 }
+let searchCriteria = {artist: 'Ray Charles', year: 1957 }
 
 function search(collection, searchCriteria){
   let mostCriteria = [];
-  console.log(`inside search function${mostCriteria}`);
+  // console.log(`inside search function${mostCriteria}`);
+  if(!searchCriteria || Object.keys(searchCriteria).length === 0 || !searchCriteria.artist || !searchCriteria.year){
+    return collection;
+  } 
   for(let i = 0; i < collection.length; i++){
     if(collection[i].artist === searchCriteria.artist && collection[i].yearPublished === searchCriteria.year){
       mostCriteria.push(collection[i]);
@@ -54,7 +57,7 @@ function search(collection, searchCriteria){
   return mostCriteria;
 }
 
-console.log(search(myCollection, 'Jon Pardi', 2019))
+console.log(search(myCollection, searchCriteria))
 
 
 console.log(addToCollection(myCollection, 'Heartache Medication', 'Jon Pardi', 2019))
