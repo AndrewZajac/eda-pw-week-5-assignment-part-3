@@ -39,6 +39,7 @@ function findByArtist(collection, artist){
   return album;
 }
 
+
 console.log(findByArtist(myCollection, 'Jon Pardi'));
 
 let searchCriteria = {artist: 'Ray Charles', year: 1957 }
